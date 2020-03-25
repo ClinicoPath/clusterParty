@@ -1,0 +1,38 @@
+---
+name:  proximity
+title: Distances
+jrs:   '1.1'
+
+items:
+    - name: txtPfm
+      title: Proximity Measures
+      type: Preformatted
+
+    - name: mtxSbj
+      title: Proximity Measures
+      type: Table
+      description: Matrix table with proximity measures
+      rows: 0
+      clearWith:
+          - shwSig
+          - sidSig
+      columns:
+          - name: .name
+            title: ""
+            type: text
+
+    - name: mtxVar
+      title: Proximity Measures
+      type: Table
+      description: Matrix table with proximity measures
+      rows: (vars)
+      clearWith:
+          - shwSig
+          - sidSig
+      columns:
+          - name: .name
+            title: ""
+            type: text
+            content: ($key)
+
+...

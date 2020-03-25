@@ -1,0 +1,11 @@
+---
+refs:
+    clusterParty:
+        type: software
+        author: Sebastian Jentschke
+        year: 2020
+        title: clusterParty
+        publisher: '[Computer software]. Retrieved from https://www.jamovi.org/library.html'
+        url: https://www.jamovi.org/library.html
+
+...

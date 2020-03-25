@@ -1,0 +1,41 @@
+---
+name:  partcorr
+title: Partial Correlation
+jrs:   '1.1'
+
+items:
+    - name: matrix
+      title: Partial Correlation Matrix
+      type: Table
+      description: Partial correlation matrix table
+      rows: (corrvars)
+      clearWith:
+          - shwSig
+          - sidSig
+
+      columns:
+          - name: .name[r]
+            title: ""
+            type: text
+            content: ($key)
+            combineBelow: true
+
+          - name: .stat[r]
+            title: ""
+            type: text
+            content: Pearson's r
+
+          - name: .name[rp]
+            title: ""
+            type: text
+            content: ($key)
+            combineBelow: true
+            visible: (shwSig)
+
+          - name: .stat[rp]
+            title: ""
+            type: text
+            content: p-value
+            visible: (shwSig)
+
+...

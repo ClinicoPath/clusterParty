@@ -1,0 +1,43 @@
+title: Partial Correlation
+name: partcorr
+jus: '3.0'
+stage: 0
+compilerMode: tame
+
+children:
+  - type: VariableSupplier
+    persistentItems: false
+    stretchFactor: 1
+    children:
+      - type: TargetLayoutBox
+        label: Variables
+        children:
+          - type: VariablesListBox
+            name: corrvars
+            isTarget: true
+      - type: TargetLayoutBox
+        label: Controlling for
+        children:
+          - type: VariablesListBox
+            name: ctrlvars
+            isTarget: true
+  - type: LayoutBox
+    margin: large
+    style: inline
+    children:
+      - type: LayoutBox
+        style: list
+        margin: large
+        children:
+          - type: CheckBox
+            name: shwSig
+          - type: CheckBox
+            name: flgSig
+      - type: LayoutBox
+        style: inline
+        margin: none
+        children:
+          - type: ComboBox
+            label: with significance level 
+            name: sidSig
+

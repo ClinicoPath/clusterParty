@@ -1,0 +1,231 @@
+---
+name:  proximity
+title: Distances
+menuGroup: Regression
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+
+    - name: vars
+      title: Variables
+      type: Variables
+      suggested: [ continuous ]
+      permitted: [ numeric ]
+
+    - name: label
+      title: Label cases by
+      type: Variable
+      suggested: [ nominal,id ]
+      permitted: [ factor,id ]
+
+    - name: disSim
+      title: Calculate
+      type: List
+      options:
+        - title: dissimilarities
+          name:  clcDis
+        - title: similarities
+          name:  clcSim
+      default: clcDis
+
+    - name: lvlMsr
+      title: for
+      type: List
+      options:
+        - title: interval
+          name:  lvlInt
+        - title: count
+          name:  lvlCnt
+        - title: binary
+          name:  lvlBin
+      default: lvlInt
+
+    - name: btwDir
+      title: data between
+      type: List
+      options:
+        - title: cases
+          name:  btwSbj
+        - title: variables
+          name:  btwVar
+      default: btwSbj
+
+    # layout box around Interval, Counts and Binary
+    # radio buttons for variable level (left)
+    # measurement choices right
+    - name: intDis
+      title: Dissimilarity
+      type: List
+      options:
+        - title: Euclidian distance
+          name:  intEuc
+        - title: Squared Euclidian distance
+          name:  intSqE
+        - title: Chebychev
+          name:  intChb
+        - title: Block
+          name:  intBlk
+        - title: Minkowski
+          name:  intMnk
+        - title: Customized
+          name:  intCst
+      default: intEuc
+
+    - name: intSim
+      title: Similarity
+      type: List
+      options:
+        - title: Pearson correlation
+          name:  intCrr
+        - title: Cosine
+          name:  intCos
+      default: intCrr
+
+    - name: intPwr
+      title: Power
+      type: Integer
+      default: 2
+      min: 1
+      max: 4
+
+    - name: intRot
+      title: Root
+      type: Integer
+      default: 2
+      min: 1
+      max: 4
+
+    - name: cntDis
+      title: Dissimilarity
+      type: List
+      options:
+        - title: Chi-square measure
+          name:  cntChi
+        - title: Phi-square measure
+          name:  cntPhi
+      default: cntChi
+
+    - name: binDis
+      title: Dissimilarity
+      type: List
+      options:
+        - title: Euclidian distance
+          name:  binEuc
+        - title: Squared Euclidian distance
+          name:  binSqE
+        - title: Size difference
+          name:  binSzD
+        - title: Pattern difference
+          name:  binPtD
+        - title: Variance
+          name:  binVar
+        - title: Shape
+          name:  binShp
+        - title: Lance and Williams
+          name:  binLnW
+      default: binEuc
+
+    - name: binSim
+      title: Similarity
+      type: List
+      options:
+        - title: Russel and Rao
+          name:  binRnR
+        - title: Simple matching
+          name:  binSmM
+        - title: Jaccard
+          name:  binJcc
+        - title: Dice
+          name:  binDic
+        - title: Rogers and Tanimoto
+          name:  binRnT
+        - title: Sokal and Sneath 1
+          name:  binSk1
+        - title: Sokal and Sneath 2
+          name:  binSk2
+        - title: Sokal and Sneath 3
+          name:  binSk3
+        - title: Kulczynski 1
+          name:  binKc1
+        - title: Kulczynski 2
+          name:  binKc2
+        - title: Sokal and Sneath 4
+          name:  binSk4
+        - title: Hamann
+          name:  binHmn
+        - title: Lambda
+          name:  binLmb
+        - title: Anderberg's D
+          name:  binAnD
+        - title: Yule's Y
+          name:  binYlY
+        - title: Yule's Q
+          name:  binYlQ
+        - title: Ochiai
+          name:  binOch
+        - title: Sokal and Sneath 5
+          name:  binSk5
+        - title: Phi 4-point correlation
+          name:  binPh4
+        - title: Dispersion
+          name:  binDsp
+      default: binRnR
+
+    - name: binPrs
+      title: Present
+      type: Number
+      default: 1
+
+    - name: binAbs
+      title: Absent
+      type: Number
+      default: 0
+
+    # transformation on the data matrix before calculating the proximity measure
+    - name: xfmMth
+      title: Standardize values
+      type: List
+      options:
+        - title: None
+          name:  xfmNon
+        - title: z-scores
+          name:  xfmZsc
+        - title: Range -1 to 1
+          name:  xfmRNP
+        - title: Range 0 to 1
+          name:  xfmRZP
+        - title: Maximum magnitude of 1
+          name:  xfmMag
+        - title: Mean of 1
+          name:  xfmAvr
+        - title: Standard deviation of 1
+          name:  xfmStd
+      default: xfmNon
+
+    - name: xfmDir
+      title: by
+      type: List
+      options:
+        - title: Variable
+          name:  xfmVar
+        - title: Case
+          name:  xfmSbj
+      default: xfmVar
+
+    # applied to the result matrix
+    - name: xfmAbs
+      title: Absolute values
+      type: Bool
+      default: false
+    - name: xfmInv
+      title: Change sign
+      type: Bool
+      default: false
+    - name: xfmRsc
+      title: Rescale to 0-1 range
+      type: Bool
+      default: false
+...

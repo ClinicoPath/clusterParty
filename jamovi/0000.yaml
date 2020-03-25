@@ -1,0 +1,28 @@
+---
+title: Partial correlation, proximity measures, and cluster analyses
+name: clusterParty
+version: 0.1.0
+jms: '1.0'
+authors:
+  - Sebastian Jentschke
+maintainer: Sebastian Jentschke <sebastian.jentschke@uib.no>
+date: '2020-03-25'
+type: R
+description: >-
+  Calculates partial correlations, distance or similarity measures, and cluster analyses
+  Replaces / reimplements the SPSS functions PARTIAL CORR, PROXIMITIES, CLUSTER, QUICK CLUSTER, and TWOSTEP CLUSTER
+  The implementation of the algorithms for the proximity / distances measures largely follows
+  www.ibm.com/support/knowledgecenter/SSLVMB_22.0.0/com.ibm.spss.statistics.algorithms/alg_proximities.htm
+analyses:
+  - title: Partial Correlation
+    name: partcorr
+    ns: PartialProximity
+    menuGroup: Regression
+    menuTitle: Partial Correlation
+  - title: Distances
+    name: proximity
+    ns: PartialProximity
+    menuGroup: Regression
+    menuTitle: Distances
+
+...

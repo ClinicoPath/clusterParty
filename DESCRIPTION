@@ -1,0 +1,13 @@
+Package: clusterParty
+Type: Package
+Title: Partial correlation and proximity measures
+Version: 0.1.0
+Author: Sebastian Jentschke
+Maintainer: Sebastian Jentschke <sebastian.jentschke@uib.no>
+Description: Calculates partial correlations, distance or similarity measures, and cluster analyses
+    Replaces / reimplements the SPSS functions PARTIAL CORR, PROXIMITIES, CLUSTER, QUICK CLUSTER, and TWOSTEP CLUSTER
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+Imports: jmvcore (>= 0.8.5), 
+         R6

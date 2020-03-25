@@ -1,0 +1,52 @@
+---
+name:  partcorr
+title: Partial Correlation
+menuGroup: Regression
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+
+    - name: corrvars
+      title: Variables
+      type: Variables
+      suggested: [ continuous ]
+      permitted: [ numeric ]
+
+    - name: ctrlvars
+      title: Controlling for
+      type: Variables
+      suggested: [ continuous ]
+      permitted: [ numeric ]
+
+    - name: shwSig
+      title: Show significance levels
+      type: Bool
+      default: true
+
+    - name: flgSig
+      title: Flag significant correlations
+      type: Bool
+      default: false
+
+    - name: sidSig
+      title: Test of Significance
+      type: List
+      options:
+        - title: one-tailed
+          name:  onetailed
+        - title: two-tailed
+          name:  twotailed
+      default: twotailed
+
+#   - name: zerOrd
+#     title: zero-order correlations
+#     type: Bool
+#     default: false
+
+# casewise / listwise exclusion
+
+...
+
